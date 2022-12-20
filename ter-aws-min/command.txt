@@ -1,0 +1,40 @@
+change directory and execute
+terraform init
+
+to create plan execute
+terraform plan -out=s1.tfplan
+
+to see dependencies execute
+terraform graph
+
+to generate diagram copy the output and paste the web site www.webgaphviz.com and check the diagram
+
+to see s1.tfplan execute below command because it is a binary file
+terraform show s1.tfplan
+
+to see the state run
+terraform show
+
+to json format
+terraform show -json s1.tfplan
+
+to apply plan execute below command
+terraform apply s1.tfplan
+
+to ssh demo dont use prod envirement
+chmod 400 tf_key.pem
+ssh -i "tf_key.pem" ec2-user@dnsname (for ex:ec2-18-217.....)
+
+check AWS sources manually 
+
+check AWS sources with cli execute below command
+export AWS_PAGER=""
+aws ec2 describe-instances --query "Reservations[].Instances[].InstanceId" --output table
+
+to remove/destroy everything execute below command
+terraform destroy
+
+terraform plan -var deploy_enviriment=PROD //cli ile variable gönderme
+
+terraform console //interactive interface
+
