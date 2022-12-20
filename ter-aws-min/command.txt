@@ -38,3 +38,9 @@ terraform plan -var deploy_enviriment=PROD //cli ile variable gönderme
 
 terraform console //interactive interface
 
+exercise 03_05-06_mul... on the path .../environment/0_developmet to execute command
+terraform init ../../manifests 
+terraform plan -out=s1.tfplan ../../manifests 
+terraform apply -out=s1.tfplan 
+do above steps for 1_qa and 2_production
+to check run the commands in the commands.txt file
